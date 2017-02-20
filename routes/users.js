@@ -1,5 +1,7 @@
 const express = require('express');
 
+let userModel = require('../model/user');
+
 // 生成一个路由实例
 const router = express.Router();
 
@@ -10,7 +12,16 @@ router.get('/reg', (req, res) => {
 
 // 提交用户注册的表单
 router.post('/reg', (req, res) => {
-    res.send('reg')
+
+    let user = req.body;
+
+    userModel.create(user, (err, doc) => {
+        if(err){
+            res.redirect('back'); // 返回上一个页面
+        }else{
+            res.redirect('/');
+        }
+    })
 });
 
 // 用户登录
