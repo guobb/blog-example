@@ -9,7 +9,9 @@ const mongoose = require('mongoose');
 
 let userSchema = new mongoose.Schema({
     username: String,
-    password: String
+    password: String,
+    email: String,
+    avatar: String
 });
 
 // 定义model

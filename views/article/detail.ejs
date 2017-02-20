@@ -1,0 +1,14 @@
+<%- include ../include/header.ejs%>
+<div class="panel panel-default">
+
+    <div class="panel-heading"><%=article.title%></div>
+    <div class="panel-body">
+        <p><%=article.content%></p>
+    </div>
+    <div class="panel-footer">
+        <a href="/articles/updata/<%=article._id%>" class="btn btn-warning">修改</a>
+        <a href="/articles/delete/<%=article._id%>" class="btn btn-danger">删除</a>
+    </div>
+</div>
+
+<%- include ../include/footer.ejs%>
