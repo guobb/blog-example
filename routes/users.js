@@ -1,9 +1,36 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+// 生成一个路由实例
+const router = express.Router();
+
+// 用户注册,当用户通过get方法请求 /users/reg的时候，去执行此回调
+router.get('/reg', (req, res) => {
+    res.render('user/reg');
 });
 
+// 提交用户注册的表单
+router.post('/reg', (req, res) => {
+    res.send('reg')
+});
+
+// 用户登录
+router.get('/login', (req, res) => {
+    res.render('user/login')
+});
+
+// 提交用户注册表单
+router.post('/login', (req, res) => {
+    res.send('login')
+});
+
+// 退出登录
+router.get('/logout', (req, res) => {
+    res.send('user/logout')
+});
 module.exports = router;
+
+
+
+
+
+

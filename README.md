@@ -20,3 +20,8 @@ $ cd [projectname] && npm install
 
 ````
 #### 通过浏览器打开
+
+````
+> http://localost:3000
+
+````
